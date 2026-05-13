@@ -12,6 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use("/images", express.static("images"));
 
+app.use(
+  cors({
+    origin: "https://ecommerce-frontend-ten-virid.vercel.app",
+  })
+);
+
 //test route
 app.get("/", (req,res)=> {
     res.send("API is working");
